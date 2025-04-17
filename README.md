@@ -101,5 +101,5 @@ npm start
 - GET /comments/:id – Ver todos los comentarios dependiendo de cada bloc.
 
 ##  👩🏻✍🏻💡 Documentación de api
-Se utilizó postman [este archivo](ApiPostman.json).
+Se utilizó postman [este link](https://.postman.co/workspace/My-Workspace~ea6766d8-70f2-4804-8ab4-3cef52f9b99c/collection/41761112-b69bfc3e-49ea-4c6d-a2ba-c9b469ab7c22?action=share&creator=41761112).
 
