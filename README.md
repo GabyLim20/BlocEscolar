@@ -25,6 +25,11 @@ Una aplicación web que permite a maestras crear blocs de notas, añadir comenta
 | └─ 📑 blocController.js         | Controlador para gestionar las notas.  |
 | └─ 📑 rolController.js         | Controlador para gestionar los roles.  |
 | └─ 📑 commentsController.js         | Controlador para manejar las dudas y/o comentarios.  |
+| 📁 frontend                 | Carpeta con los html y script.          |
+| └─ 📑 about.html         |   |
+| └─ 📑 profile..html        |  |
+| └─ 📑 register.html         | |
+| └─ 📑 login.html         |  |
 | 📁 middleware           | Middlewares para validaciones y autenticación.          |
 | └─ 📑 authMiddleware.js        | Middleware para autenticación.  |
 | 📁 models                 | Almacena datos en formato JSON.          |
@@ -54,6 +59,16 @@ Ejecuta el siguiente bloque de comandos en tu terminal para configurar el proyec
 **3. Instalar la dependencia**
 ```bash
 npm install express sequelize mysql2 bcrypt express-rate-limit
+```
+##  👩🏻‍💻📓✍🏻💡 Como correr el frontend
+### Pasos a seguir
+**1. Instalar la extensión**
+```bash
+  LiveServer- ritwickdey.LiveServer
+```
+**2. Dar click en goLive**
+```bash
+  En la parte inferior derecha
 ```
 
 #### 📜🛠️ Ejecución

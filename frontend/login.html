@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <title>limelight</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
+        media="screen">
+
+</head>
+
+<body class="main-layout in_page">
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-center p-4">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="loginModalLabel">Mensaje</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body" id="loginModalMessage">
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="changePasswordModal" tabindex="-1" aria-labelledby="changePasswordModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="changePasswordModalLabel">Cambiar Contraseña</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+              <form id="changePasswordForm">
+                <div class="mb-3">
+                    <label for="mail" class="form-label">Correo</label>
+                    <input type="mail" class="form-control" id="mail" required>
+                </div>
+                  <div class="mb-3">
+                      <label for="oldPassword" class="form-label">Contraseña Anterior</label>
+                      <input type="password" class="form-control" id="oldPassword" required>
+                  </div>
+                  <div class="mb-3">
+                      <label for="newPassword" class="form-label">Nueva Contraseña</label>
+                      <input type="password" class="form-control" id="newPassword" required>
+                  </div>
+                  <div class="mb-3">
+                      <label for="confirmPassword" class="form-label">Confirmar Nueva Contraseña</label>
+                      <input type="password" class="form-control" id="confirmPassword" required>
+                  </div>
+                  <div id="error-message" class="text-danger" style="display: none;">
+                      Las contraseñas no coinciden o la contraseña anterior es incorrecta.
+                  </div>
+                  <button type="submit" class="btn btn-primary">Cambiar Contraseña</button>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+
+    <div class="loader_bg">
+        <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+    </div>
+    <header>
+        <div class="header">
+            <div class="container">
+                <div class="row d-flex align-items-center">
+                    <div class="col-md-2">
+                        <div class="logo">
+                            <a href="index.html"><img src="images/logo.png" alt="#" /></a>
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                        <nav class="navigation navbar navbar-expand-md navbar-dark">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarsExample04">
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="index.html">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="about.html">About</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="service.html">Notas</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="profile.html">Profile</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="tabla.html">Configuración</a>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="login.html">Login</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="register.html">Registro</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="card shadow-sm p-4 mb-4" style="max-width: 500px; margin: 50px auto;">
+        <h3 class="text-center mb-4 p-4">Sign In</h3>
+        <form id="loginForm">
+            <div class="form-outline mb-4">
+                <input type="email" id="loginName" class="form-control" />
+                <label class="form-label" for="loginName">Email</label>
+            </div>
+
+            <div class="form-outline mb-4">
+                <input type="password" id="loginPassword" class="form-control" />
+                <label class="form-label" for="loginPassword">Password</label>
+            </div>
+
+            <div class="row mb-4">
+                
+                <div class="col-md-6 d-flex justify-content-center">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#changePasswordModal">Forgot password?</a>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+
+            <div class="text-center">
+                <p>Not a member? <a href="register.html">Register</a></p>
+            </div>
+        </form>
+    </div>
+
+    <footer>
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="social_icon">
+                            <li><a href="https://www.facebook.com/gaby.muns/"><i class="fa fa-facebook"
+                                        aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/gabylim20"><i class="fa fa-linkedin"
+                                        aria-hidden="true"></i></a></li>
+                            <li><a href="https://github.com/GabyLim20"><i class="fa fa-github"
+                                        aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.instagram.com/gaby_muns/"><i class="fa fa-instagram"
+                                        aria-hidden="true"></i></a></li>
+                        </ul>
+                        <p class="variat pad_roght2">Algunas de las redes</p>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-10 offset-md-1">
+                            <p>© 2025 GabLim20 </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.0.0.min.js"></script>
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

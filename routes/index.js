@@ -24,7 +24,7 @@ router.delete("/bloc/:id", middleware.verifyToken, blocController.deletBloc);
 router.get("/blocs", middleware.verifyToken, blocController.getBlocByTeacher);
 
 router.post("/comments", middleware.verifyLogin, commentsController.create);
-router.put("/comments/:id", middleware.verifyToken, commentsController.editComent);
+router.put("/comments/:id", middleware.verifyLogin, commentsController.editComent);
 router.delete("/comments/:id", middleware.verifyToken, commentsController.deletComent);
 router.get("/comments/:id", commentsController.getCommentBybloc);
 

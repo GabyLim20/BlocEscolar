@@ -69,26 +69,22 @@ const getCommentBybloc = async (req, res) => {
     }
 };
 
-
 const deletComent = async (req, res) => {
     try {
-        const { id } = req.params;
-        const usuarioId = req.user.id;
-
+        const { id } = req.params;  // ID del comentario a eliminar
         const comentario = await Comentario.findByPk(id);
 
         if (!comentario) {
             return res.status(404).json({ error: "Comentario no encontrado" });
         }
 
-        if (comentario.id_user !== usuarioId) {
-            return res.status(403).json({ error: "No tienes permiso para eliminar este comentario" });
-        }
-
+        // Eliminar el comentario
         await comentario.destroy();
+
         res.json({ mensaje: "Comentario eliminado" });
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 };
+
 module.exports = {create, editComent, getCommentBybloc, deletComent};

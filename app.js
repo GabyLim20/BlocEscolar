@@ -2,11 +2,14 @@
 const express = require('express');
 const rateLimit = require('express-rate-limit');
 const path = require('path');
+const cors = require('cors');
 const routes = require('./routes');
 const { sequelize } = require('./models');
 
 const app = express();
 const port = 3000;
+app.use(cors());
+
 const limiter = rateLimit({
     windowMs: 10 * 60 * 1000, 
     max: 100, 
