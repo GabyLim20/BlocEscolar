@@ -118,3 +118,15 @@ npm start
 ##  👩🏻✍🏻💡 Documentación de api
 Se utilizó postman [este link](https://web.postman.co/workspace/ea6766d8-70f2-4804-8ab4-3cef52f9b99c/documentation/41761112-b69bfc3e-49ea-4c6d-a2ba-c9b469ab7c22).
 
+##  👩🏻✍🏻 Uso practico 
+Login
+![Login](frontend/images/login.png)
+Registro
+![Registro](frontend/images/register.png)
+Ver Usuarios - Solo con admin o maestra
+![Ver Usuarios](frontend/images/ver.png)
+Editar Usuario Solo con admin o maestra
+![Editar Usuarios](frontend/images/edit.png)
+Ver Rol Solo admin
+![Ver Rol](frontend/images/rol.png)
+
