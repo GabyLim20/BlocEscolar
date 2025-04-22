@@ -127,6 +127,7 @@ Ver Usuarios - Solo con admin o maestra
 ![Ver Usuarios](frontend/images/ver.png)
 Editar Usuario Solo con admin o maestra
 ![Editar Usuarios](frontend/images/edit.png)
+
 Ver Rol Solo admin
 ![Ver Rol](frontend/images/rol.png)
 

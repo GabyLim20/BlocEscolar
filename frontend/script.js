@@ -7,12 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const email = document.getElementById("loginName").value;
         const password = document.getElementById("loginPassword").value;
 
-        // Validar si los campos no están vacíos
         if (!email || !password) {
             document.getElementById("loginModalMessage").textContent = "Por favor, completa todos los campos.";
             const modal = new bootstrap.Modal(document.getElementById("loginModal"));
             modal.show();
-            return; // No hacer la solicitud si faltan datos
+            return; 
         }
 
         try {
@@ -27,20 +26,18 @@ document.addEventListener("DOMContentLoaded", () => {
             const data = await response.json();
 
             if (response.ok) {
-                // ✅ Guardar el token, ID del usuario y rol (si es necesario)
                 localStorage.setItem("token", data.token);
-                localStorage.setItem("userId", data.id); // Guardar el ID del usuario
-                localStorage.setItem("userRole", data.role); // Guardar el rol del usuario, si lo envías desde el backend
+                localStorage.setItem("userId", data.id); 
+                localStorage.setItem("userRole", data.role); 
 
                 document.getElementById("loginModalMessage").textContent = data.mensaje;
                 const modal = new bootstrap.Modal(document.getElementById("loginModal"));
                 modal.show();
 
                 setTimeout(() => {
-                    window.location.href = "index.html"; // Redirigir después de 2 segundos
+                    window.location.href = "index.html";
                 }, 2000);
             } else {
-                // Si hay un error (ej. credenciales incorrectas)
                 document.getElementById("loginModalMessage").textContent = data.error || "Credenciales incorrectas";
                 const modal = new bootstrap.Modal(document.getElementById("loginModal"));
                 modal.show();
@@ -54,7 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-//Cambiar contraseña
 document.getElementById("changePasswordForm").addEventListener("submit", async function (e) {
     e.preventDefault();
     const mail = document.getElementById("mail").value;

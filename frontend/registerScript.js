@@ -54,7 +54,6 @@
           errorMessage.style.display = "none";
           form.reset();
   
-          // Si usas modal con Bootstrap, ciérralo si está activo
           const modalElement = document.getElementById("registerModal");
           if (modalElement) {
             const modal = bootstrap.Modal.getInstance(modalElement);

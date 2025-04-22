@@ -71,14 +71,13 @@ const getCommentBybloc = async (req, res) => {
 
 const deletComent = async (req, res) => {
     try {
-        const { id } = req.params;  // ID del comentario a eliminar
+        const { id } = req.params;  
         const comentario = await Comentario.findByPk(id);
 
         if (!comentario) {
             return res.status(404).json({ error: "Comentario no encontrado" });
         }
 
-        // Eliminar el comentario
         await comentario.destroy();
 
         res.json({ mensaje: "Comentario eliminado" });
